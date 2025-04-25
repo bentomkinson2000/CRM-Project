@@ -1,0 +1,67 @@
+/* styles/App.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+    color: #333;
+    background-color: #f5f7fa;
+  }
+  
+  .app {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 500;
+    border: none;
+    transition: all 0.2s;
+  }
+  
+  .btn-primary {
+    background-color: #4a6cf7;
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #3a56d7;
+  }
+  
+  .btn-secondary {
+    background-color: #e9ecef;
+    color: #495057;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #dee2e6;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
+  
+  .text-right {
+    text-align: right;
+  }

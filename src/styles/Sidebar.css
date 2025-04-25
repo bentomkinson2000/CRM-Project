@@ -1,0 +1,108 @@
+/* styles/QuoteCreate.css */
+.quote-create {
+    max-width: 1200px;
+  }
+  
+  .page-header {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .page-header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2a3042;
+  }
+  
+  .form-section {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .form-section h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #4a6cf7;
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .form-row .form-group {
+    flex: 1;
+  }
+  
+  .empty-state {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    color: #6c757d;
+  }
+  
+  .quote-items table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .quote-items th,
+  .quote-items td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .quote-items th {
+    text-align: left;
+    font-weight: 600;
+    background-color: #f8f9fa;
+  }
+  
+  .quote-items tfoot td {
+    border-bottom: none;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
