@@ -1,14 +1,41 @@
-// components/Sidebar.js
+// components/Sidebar.js - Updated with customization options
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Home, Users, FileText, ShoppingCart, Package, Briefcase } from 'lucide-react';
+import { 
+  Home, 
+  Users, 
+  FileText, 
+  ShoppingCart, 
+  Package, 
+  Briefcase,
+  Settings,
+  Database,
+  Layout
+} from 'lucide-react';
+import { useConfiguration } from '../context/ConfigurationContext';
 import '../styles/Sidebar.css';
 
 const Sidebar = () => {
+  const { config, loading } = useConfiguration();
+
+  // Apply theme from configuration
+  const sidebarStyle = !loading && config?.theme 
+    ? { backgroundColor: config.theme.sidebar } 
+    : {};
+  
+  const textStyle = !loading && config?.theme 
+    ? { color: config.theme.sidebar === '#ffffff' ? '#333333' : '#a6b0cf' } 
+    : {};
+
   return (
-    <div className="sidebar">
+    <div className="sidebar" style={sidebarStyle}>
       <div className="logo">
-        <h2>CRM System</h2>
+        <h2 style={textStyle}>
+          {!loading && config?.general?.companyName 
+            ? config.general.companyName 
+            : 'CRM System'
+          }
+        </h2>
       </div>
       <nav className="sidebar-nav">
         <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>
@@ -43,6 +70,23 @@ const Sidebar = () => {
           <Package size={20} />
           <span>Products</span>
         </NavLink>
+        
+        {/* Customization Section */}
+        <div className="sidebar-section">
+          <div className="sidebar-section-title" style={textStyle}>Customization</div>
+          <NavLink to="/customize" className={({ isActive }) => isActive ? 'active' : ''} end>
+            <Settings size={20} />
+            <span>Customize CRM</span>
+          </NavLink>
+          <NavLink to="/customize/fields" className={({ isActive }) => isActive ? 'active' : ''}>
+            <Database size={20} />
+            <span>Custom Fields</span>
+          </NavLink>
+          <NavLink to="/customize/pages/dashboard" className={({ isActive }) => isActive ? 'active' : ''}>
+            <Layout size={20} />
+            <span>Page Builder</span>
+          </NavLink>
+        </div>
       </nav>
     </div>
   );
